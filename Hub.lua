@@ -56,6 +56,13 @@ local play_arrow_2 = Instance.new("ImageButton")
 local ImageLabel_11 = Instance.new("ImageLabel")
 local TextButton_4 = Instance.new("TextButton")
 local TextLabel_6 = Instance.new("TextLabel")
+local Framesellfarms = Instance.new("Frame")
+local textsellfarms = Instance.new("TextButton")
+local UICorner_16 = Instance.new("UICorner")
+local sELLfarms = Instance.new("TextButton")
+local UICorner_17 = Instance.new("UICorner")
+local UIGradient_3 = Instance.new("UIGradient")
+local play_arrow_3 = Instance.new("ImageButton")
 local radio_button_checked = Instance.new("ImageButton")
 
 --Properties:
@@ -79,9 +86,8 @@ main.Parent = DdzHub
 main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 main.BackgroundTransparency = 0.800
 main.BorderColor3 = Color3.fromRGB(255, 255, 255)
-main.Position = UDim2.new(0.235661075, 0, 0.346429914, 0)
+main.Position = UDim2.new(0.0108355507, 0, 0.648994029, 0)
 main.Size = UDim2.new(0, 252, 0, 358)
-main.Visible = false
 main.Draggable = true
 
 local function dragify(frame)
@@ -123,7 +129,6 @@ local function dragify(frame)
 end
 
 dragify(main)
-
 
 ImageLabel.Parent = main
 ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -389,7 +394,7 @@ main_2.Parent = main
 main_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 main_2.BackgroundTransparency = 0.800
 main_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
-main_2.Position = UDim2.new(1.10422111, 0, 0.138344944, 0)
+main_2.Position = UDim2.new(1.07247508, 0, 0.135551646, 0)
 main_2.Size = UDim2.new(0, 526, 0, 307)
 
 ImageLabel_8.Parent = main_2
@@ -429,7 +434,7 @@ UICorner_10.Parent = Module1_2
 TextButton_3.Parent = Module1_2
 TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton_3.BackgroundTransparency = 1.000
-TextButton_3.Position = UDim2.new(0.0391556248, 0, 0.0485746339, 0)
+TextButton_3.Position = UDim2.new(0.0269605033, 0, 0.0433663018, 0)
 TextButton_3.Size = UDim2.new(0, 118, 0, 17)
 TextButton_3.Font = Enum.Font.SourceSansBold
 TextButton_3.Text = "AUTO CHAIN"
@@ -457,8 +462,8 @@ Execute1_2.Text = ""
 Execute1_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 Execute1_2.TextSize = 17.000
 Execute1_2.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://mmdevelopment.xyz/scripts/tdsautochain"))()
-end)
+    loadstring(game:HttpGet("https://mmdevelopment.xyz/scripts/tdsautochain"))()
+    end)
 
 UICorner_12.Parent = Execute1_2
 
@@ -531,8 +536,8 @@ Execute1_3.Text = ""
 Execute1_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 Execute1_3.TextSize = 17.000
 Execute1_3.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/TacoCatBackWardsIsTacoCat/scripts/main/TDS%20Auto%20Medic.lua",true))()
-end)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TacoCatBackWardsIsTacoCat/scripts/main/TDS%20Auto%20Medic.lua",true))()
+    end)
 
 UICorner_15.Parent = Execute1_3
 
@@ -579,6 +584,80 @@ TextLabel_6.TextSize = 18.000
 TextLabel_6.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel_6.TextYAlignment = Enum.TextYAlignment.Top
 
+Framesellfarms.Name = "Framesellfarms"
+Framesellfarms.Parent = main_2
+Framesellfarms.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+Framesellfarms.BackgroundTransparency = 0.650
+Framesellfarms.Position = UDim2.new(0.0264177211, 0, 0.856803358, 0)
+Framesellfarms.Size = UDim2.new(0, 489, 0, 36)
+
+textsellfarms.Name = "textsellfarms"
+textsellfarms.Parent = Framesellfarms
+textsellfarms.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+textsellfarms.BackgroundTransparency = 1.000
+textsellfarms.Position = UDim2.new(0.0541083664, 0, 0.255549669, 0)
+textsellfarms.Size = UDim2.new(0, 207, 0, 17)
+textsellfarms.Font = Enum.Font.SourceSansBold
+textsellfarms.Text = "	SELL ALL FARMS (WAVE 40)"
+textsellfarms.TextColor3 = Color3.fromRGB(255, 255, 255)
+textsellfarms.TextSize = 23.000
+
+UICorner_16.CornerRadius = UDim.new(0, 14)
+UICorner_16.Parent = Framesellfarms
+
+sELLfarms.Name = "sELLfarms"
+sELLfarms.Parent = Framesellfarms
+sELLfarms.BackgroundColor3 = Color3.fromRGB(248, 174, 0)
+sELLfarms.BackgroundTransparency = 0.550
+sELLfarms.Position = UDim2.new(0.694623351, 0, 0.109459765, 0)
+sELLfarms.Size = UDim2.new(0, 71, 0, 26)
+sELLfarms.Font = Enum.Font.LuckiestGuy
+sELLfarms.LineHeight = 0.840
+sELLfarms.Text = ""
+sELLfarms.TextColor3 = Color3.fromRGB(255, 255, 255)
+sELLfarms.TextSize = 17.000
+Execute1_3.MouseButton1Down:connect(function()
+    if not game:IsLoaded() then game.Loaded:Wait() end
+if game.PlaceId ~= 5591597781 then return end
+local rf, id, StateReplicatorPath = game.ReplicatedStorage.RemoteFunction, game.Players.LocalPlayer.UserId
+for i,v in pairs(game.ReplicatedStorage.StateReplicators:GetChildren()) do
+	if v:GetAttribute("Wave") then
+		StateReplicatorPath = v
+		break
+	end
+end
+StateReplicatorPath:GetAttributeChangedSignal("Wave"):Wait()
+local FinalWaveAtDifferentMode = {["Easy"] = 30, ["Normal"] = 40, ["Insane"] = 40, ["Hardcore"] = 50}
+local FinalWave = FinalWaveAtDifferentMode[game.ReplicatedStorage.State.Difficulty.Value]
+StateReplicatorPath:GetAttributeChangedSignal("Wave"):Connect(function()
+	if StateReplicatorPath:GetAttribute("Wave") == FinalWave then
+		for i,v in ipairs(workspace.Towers:GetChildren()) do
+			if v.Owner.Value == id and v.Replicator:GetAttribute("Type") == "Farm" then
+				spawn(function()
+					rf:InvokeServer("Troops","Sell",{["Troop"] = v})
+				end)
+			end
+		end
+	end
+end)
+    end)
+
+UICorner_17.Parent = sELLfarms
+
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(247, 157, 32)), ColorSequenceKeypoint.new(0.49, Color3.fromRGB(252, 252, 252)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(247, 198, 0))}
+UIGradient_3.Parent = sELLfarms
+
+play_arrow_3.Name = "play_arrow"
+play_arrow_3.Parent = sELLfarms
+play_arrow_3.BackgroundTransparency = 1.000
+play_arrow_3.LayoutOrder = 10
+play_arrow_3.Position = UDim2.new(0.336892575, 0, 0.125356823, 0)
+play_arrow_3.Size = UDim2.new(0, 23, 0, 19)
+play_arrow_3.ZIndex = 2
+play_arrow_3.Image = "rbxassetid://3926307971"
+play_arrow_3.ImageRectOffset = Vector2.new(764, 244)
+play_arrow_3.ImageRectSize = Vector2.new(36, 36)
+
 radio_button_checked.Name = "radio_button_checked"
 radio_button_checked.Parent = main
 radio_button_checked.BackgroundTransparency = 1.000
@@ -591,7 +670,7 @@ radio_button_checked.ImageRectSize = Vector2.new(48, 48)
 
 -- Scripts:
 
-local function OYTPPC_fake_script() -- DdzHub.Script 
+local function DYEOJUB_fake_script() -- DdzHub.Script 
 	local script = Instance.new('Script', DdzHub)
 
 	local SGui = script.Parent
@@ -602,8 +681,8 @@ local function OYTPPC_fake_script() -- DdzHub.Script
 		Frame.Visible = not Frame.Visible
 	end)
 end
-coroutine.wrap(OYTPPC_fake_script)()
-local function GTHAQM_fake_script() -- OpenUI.Script 
+coroutine.wrap(DYEOJUB_fake_script)()
+local function TAKXFSE_fake_script() -- OpenUI.Script 
 	local script = Instance.new('Script', OpenUI)
 
 	local Hover = script.Parent.HOVER
@@ -616,4 +695,4 @@ local function GTHAQM_fake_script() -- OpenUI.Script
 		Hover:Stop()
 	end)
 end
-coroutine.wrap(GTHAQM_fake_script)()
+coroutine.wrap(TAKXFSE_fake_script)()
