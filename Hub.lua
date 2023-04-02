@@ -598,7 +598,7 @@ textsellfarms.BackgroundTransparency = 1.000
 textsellfarms.Position = UDim2.new(0.0541083664, 0, 0.255549669, 0)
 textsellfarms.Size = UDim2.new(0, 207, 0, 17)
 textsellfarms.Font = Enum.Font.SourceSansBold
-textsellfarms.Text = "	SELL ALL FARMS (WAVE 40)"
+textsellfarms.Text = "Skip Keybind (Press E)"
 textsellfarms.TextColor3 = Color3.fromRGB(255, 255, 255)
 textsellfarms.TextSize = 23.000
 
@@ -617,28 +617,11 @@ sELLfarms.Text = ""
 sELLfarms.TextColor3 = Color3.fromRGB(255, 255, 255)
 sELLfarms.TextSize = 17.000
 Execute1_3.MouseButton1Down:connect(function()
-    if not game:IsLoaded() then game.Loaded:Wait() end
-if game.PlaceId ~= 5591597781 then return end
-local rf, id, StateReplicatorPath = game.ReplicatedStorage.RemoteFunction, game.Players.LocalPlayer.UserId
-for i,v in pairs(game.ReplicatedStorage.StateReplicators:GetChildren()) do
-	if v:GetAttribute("Wave") then
-		StateReplicatorPath = v
-		break
-	end
-end
-StateReplicatorPath:GetAttributeChangedSignal("Wave"):Wait()
-local FinalWaveAtDifferentMode = {["Easy"] = 30, ["Normal"] = 40, ["Insane"] = 40, ["Hardcore"] = 50}
-local FinalWave = FinalWaveAtDifferentMode[game.ReplicatedStorage.State.Difficulty.Value]
-StateReplicatorPath:GetAttributeChangedSignal("Wave"):Connect(function()
-	if StateReplicatorPath:GetAttribute("Wave") == FinalWave then
-		for i,v in ipairs(workspace.Towers:GetChildren()) do
-			if v.Owner.Value == id and v.Replicator:GetAttribute("Type") == "Farm" then
-				spawn(function()
-					rf:InvokeServer("Troops","Sell",{["Troop"] = v})
-				end)
-			end
-		end
-	end
+    --To skip press "E"
+    game:GetService("UserInputService").InputBegan:Connect(function(input, chatting)
+    if input.KeyCode == Enum.KeyCode.E and not chatting then
+    game.ReplicatedStorage.RemoteEvent:FireServer("Waves","Skip")
+    end
 end)
     end)
 
