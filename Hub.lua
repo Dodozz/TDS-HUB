@@ -618,10 +618,10 @@ sELLfarms.TextColor3 = Color3.fromRGB(255, 255, 255)
 sELLfarms.TextSize = 17.000
 Execute1_3.MouseButton1Down:connect(function()
     local Prop = game.ReplicatedStorage.State.Voting.Enabled
-Prop:GetPropertyChangedSignal("Value"):Connect(function()
-    if Prop.Value then
-        game.ReplicatedStorage.RemoteEvent:FireServer("Waves","Skip")
-    end
+    Prop:GetPropertyChangedSignal("Value"):Connect(function()
+        if Prop.Value then
+            game.ReplicatedStorage.RemoteEvent:FireServer("Waves","Skip")
+        end
     end)
     end)
 
