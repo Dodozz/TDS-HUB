@@ -617,12 +617,9 @@ sELLfarms.Text = ""
 sELLfarms.TextColor3 = Color3.fromRGB(255, 255, 255)
 sELLfarms.TextSize = 17.000
 Execute1_3.MouseButton1Down:connect(function()
-    local Prop = game.ReplicatedStorage.State.Voting.Enabled
-    Prop:GetPropertyChangedSignal("Value"):Connect(function()
-        if Prop.Value then
-            game.ReplicatedStorage.RemoteEvent:FireServer("Waves","Skip")
-        end
-    end)
+    local RS = game:GetService('ReplicatedStorage'); local rF = RS:WaitForChild('RemoteFunction'); local aSP = RS:WaitForChild("State"):WaitForChild("Voting"):WaitForChild("Enabled"); local aS = true
+    local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/dfhtyxvzexrxgfdzgzfdvfdz/main/jsdnfjdsfdjnsmvkjhlkslzLIB", true))(); local window = UI:CreateWindow('AutoSkip V2'); local toggle = window:Toggle('Auto Skip', {flag = "as", default = true}, function(v) aS = v end)
+    aSP:GetPropertyChangedSignal("Value"):Connect(function() if aS and aSP.Value then wait(.15) rF:InvokeServer('Waves', 'Skip') end end)
     end)
 
 UICorner_17.Parent = sELLfarms
