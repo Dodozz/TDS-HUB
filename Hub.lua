@@ -598,7 +598,7 @@ textsellfarms.BackgroundTransparency = 1.000
 textsellfarms.Position = UDim2.new(0.0541083664, 0, 0.255549669, 0)
 textsellfarms.Size = UDim2.new(0, 207, 0, 17)
 textsellfarms.Font = Enum.Font.SourceSansBold
-textsellfarms.Text = "Skip Keybind (Press E)"
+textsellfarms.Text = "Auto Skip"
 textsellfarms.TextColor3 = Color3.fromRGB(255, 255, 255)
 textsellfarms.TextSize = 23.000
 
@@ -617,12 +617,12 @@ sELLfarms.Text = ""
 sELLfarms.TextColor3 = Color3.fromRGB(255, 255, 255)
 sELLfarms.TextSize = 17.000
 Execute1_3.MouseButton1Down:connect(function()
-    --To skip press "E"
-    game:GetService("UserInputService").InputBegan:Connect(function(input, chatting)
-    if input.KeyCode == Enum.KeyCode.E and not chatting then
-    game.ReplicatedStorage.RemoteEvent:FireServer("Waves","Skip")
+    local Prop = game.ReplicatedStorage.State.Voting.Enabled
+Prop:GetPropertyChangedSignal("Value"):Connect(function()
+    if Prop.Value then
+        game.ReplicatedStorage.RemoteEvent:FireServer("Waves","Skip")
     end
-end)
+    end)
     end)
 
 UICorner_17.Parent = sELLfarms
