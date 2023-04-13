@@ -1,5 +1,3 @@
---Made By Dodoz
-
 local DdzHub = Instance.new("ScreenGui")
 local OpenUI = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
@@ -64,6 +62,23 @@ local UICorner_17 = Instance.new("UICorner")
 local UIGradient_3 = Instance.new("UIGradient")
 local play_arrow_3 = Instance.new("ImageButton")
 local radio_button_checked = Instance.new("ImageButton")
+local Login = Instance.new("Frame")
+local Login_2 = Instance.new("TextLabel")
+local UICorner_18 = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local UIGradient_4 = Instance.new("UIGradient")
+local UIGradient_5 = Instance.new("UIGradient")
+local account_circle = Instance.new("ImageButton")
+local KeyHere = Instance.new("TextBox")
+local UICorner_19 = Instance.new("UICorner")
+local UIStroke_2 = Instance.new("UIStroke")
+local UIGradient_6 = Instance.new("UIGradient")
+local Submit = Instance.new("TextButton")
+local UICorner_20 = Instance.new("UICorner")
+local UIStroke_3 = Instance.new("UIStroke")
+local UIGradient_7 = Instance.new("UIGradient")
+local GetKey = Instance.new("TextButton")
+local crop_free = Instance.new("ImageButton")
 
 --Properties:
 
@@ -77,6 +92,7 @@ OpenUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 OpenUI.BackgroundTransparency = 1.000
 OpenUI.Position = UDim2.new(0.00778142456, 0, 0.502027035, 0)
 OpenUI.Size = UDim2.new(0, 31, 0, 31)
+OpenUI.Visible = false
 OpenUI.Image = "rbxassetid://12908278025"
 
 UICorner.Parent = OpenUI
@@ -88,44 +104,45 @@ main.BackgroundTransparency = 0.800
 main.BorderColor3 = Color3.fromRGB(255, 255, 255)
 main.Position = UDim2.new(0.0108355507, 0, 0.648994029, 0)
 main.Size = UDim2.new(0, 252, 0, 358)
+main.Visible = false
 main.Draggable = true
 
 local function dragify(frame)
-    local dragging
-    local dragInput
-    local dragStart
-    local startPos
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
 
-    local function update(input)
-        local delta = input.Position - dragStart
-        frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
+	local function update(input)
+		local delta = input.Position - dragStart
+		frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
 
-    frame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            dragging = true
-            dragStart = input.Position
-            startPos = frame.Position
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
 
-            input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragging = false
-                end
-            end)
-        end
-    end)
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
 
-    frame.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-            dragInput = input
-        end
-    end)
+	frame.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
 
-    game:GetService("UserInputService").InputChanged:Connect(function(input)
-        if input == dragInput and dragging then
-            update(input)
-        end
-    end)
+	game:GetService("UserInputService").InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
 end
 
 dragify(main)
@@ -588,15 +605,15 @@ Framesellfarms.Name = "Framesellfarms"
 Framesellfarms.Parent = main_2
 Framesellfarms.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
 Framesellfarms.BackgroundTransparency = 0.650
-Framesellfarms.Position = UDim2.new(0.0264177211, 0, 0.856803358, 0)
-Framesellfarms.Size = UDim2.new(0, 489, 0, 36)
+Framesellfarms.Position = UDim2.new(0.0317993164, 0, 0.849875212, 0)
+Framesellfarms.Size = UDim2.new(0, 195, 0, 36)
 
 textsellfarms.Name = "textsellfarms"
 textsellfarms.Parent = Framesellfarms
 textsellfarms.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 textsellfarms.BackgroundTransparency = 1.000
-textsellfarms.Position = UDim2.new(0.0541083664, 0, 0.255549669, 0)
-textsellfarms.Size = UDim2.new(0, 207, 0, 17)
+textsellfarms.Position = UDim2.new(0.0205888171, 0, 0.227773026, 0)
+textsellfarms.Size = UDim2.new(0, 102, 0, 17)
 textsellfarms.Font = Enum.Font.SourceSansBold
 textsellfarms.Text = "Auto Skip"
 textsellfarms.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -609,14 +626,14 @@ sELLfarms.Name = "sELLfarms"
 sELLfarms.Parent = Framesellfarms
 sELLfarms.BackgroundColor3 = Color3.fromRGB(248, 174, 0)
 sELLfarms.BackgroundTransparency = 0.550
-sELLfarms.Position = UDim2.new(0.694623351, 0, 0.109459765, 0)
+sELLfarms.Position = UDim2.new(0.578680098, 0, 0.137237549, 0)
 sELLfarms.Size = UDim2.new(0, 71, 0, 26)
 sELLfarms.Font = Enum.Font.LuckiestGuy
 sELLfarms.LineHeight = 0.840
 sELLfarms.Text = ""
 sELLfarms.TextColor3 = Color3.fromRGB(255, 255, 255)
 sELLfarms.TextSize = 17.000
-Execute1_3.MouseButton1Down:connect(function()
+sELLfarms.MouseButton1Down:connect(function()
     local RS = game:GetService('ReplicatedStorage'); local rF = RS:WaitForChild('RemoteFunction'); local aSP = RS:WaitForChild("State"):WaitForChild("Voting"):WaitForChild("Enabled"); local aS = true
     local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/dfhtyxvzexrxgfdzgzfdvfdz/main/jsdnfjdsfdjnsmvkjhlkslzLIB", true))(); local window = UI:CreateWindow('AutoSkip V2'); local toggle = window:Toggle('Auto Skip', {flag = "as", default = true}, function(v) aS = v end)
     aSP:GetPropertyChangedSignal("Value"):Connect(function() if aS and aSP.Value then wait(.15) rF:InvokeServer('Waves', 'Skip') end end)
@@ -648,9 +665,138 @@ radio_button_checked.Image = "rbxassetid://3926309567"
 radio_button_checked.ImageRectOffset = Vector2.new(784, 420)
 radio_button_checked.ImageRectSize = Vector2.new(48, 48)
 
+Login.Name = "Login"
+Login.Parent = DdzHub
+Login.AnchorPoint = Vector2.new(0.5, 0.5)
+Login.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Login.BackgroundTransparency = 0.150
+Login.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Login.Position = UDim2.new(0.5, 0, 0.5, 0)
+Login.Size = UDim2.new(0, 239, 0, 114)
+
+Login_2.Name = "Login"
+Login_2.Parent = Login
+Login_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Login_2.BackgroundTransparency = 1.000
+Login_2.Position = UDim2.new(0.177446559, 0, 0.0765739605, 0)
+Login_2.Size = UDim2.new(0, 57, 0, 23)
+Login_2.Font = Enum.Font.GothamBold
+Login_2.Text = "Login"
+Login_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Login_2.TextScaled = true
+Login_2.TextSize = 6.000
+Login_2.TextWrapped = true
+
+UICorner_18.CornerRadius = UDim.new(0, 15)
+UICorner_18.Parent = Login
+
+UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Thickness = 3
+UIStroke.Transparency = 0.20000000298023224
+UIStroke.Parent = Login
+
+UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 32, 100)), ColorSequenceKeypoint.new(0.17, Color3.fromRGB(13, 79, 149)), ColorSequenceKeypoint.new(0.36, Color3.fromRGB(0, 112, 172)), ColorSequenceKeypoint.new(0.56, Color3.fromRGB(7, 176, 255)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(9, 142, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 136, 255))}
+UIGradient_4.Parent = UIStroke
+
+UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.92, Color3.fromRGB(31, 31, 31)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(54, 54, 54))}
+UIGradient_5.Rotation = 20
+UIGradient_5.Parent = Login
+
+account_circle.Name = "account_circle"
+account_circle.Parent = Login
+account_circle.BackgroundTransparency = 1.000
+account_circle.Position = UDim2.new(0.0690376461, 0, 0.0964912325, 0)
+account_circle.Size = UDim2.new(0, 19, 0, 19)
+account_circle.ZIndex = 2
+account_circle.Image = "rbxassetid://3926307971"
+account_circle.ImageRectOffset = Vector2.new(124, 204)
+account_circle.ImageRectSize = Vector2.new(36, 36)
+
+KeyHere.Name = "KeyHere"
+KeyHere.Parent = Login
+KeyHere.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KeyHere.BorderColor3 = Color3.fromRGB(0, 174, 255)
+KeyHere.Position = UDim2.new(0.154049993, 0, 0.356759638, 0)
+KeyHere.Size = UDim2.new(0, 165, 0, 16)
+KeyHere.Font = Enum.Font.SourceSans
+KeyHere.Text = "KeyHere"
+KeyHere.TextColor3 = Color3.fromRGB(0, 0, 0)
+KeyHere.TextScaled = true
+KeyHere.TextSize = 14.000
+KeyHere.TextWrapped = true
+
+UICorner_19.Parent = KeyHere
+
+UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_2.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_2.Parent = KeyHere
+
+UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(26, 137, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(153, 202, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_6.Parent = UIStroke_2
+
+Submit.Name = "Submit"
+Submit.Parent = Login
+Submit.BackgroundColor3 = Color3.fromRGB(0, 128, 255)
+Submit.BackgroundTransparency = 0.550
+Submit.Position = UDim2.new(0.364016742, 0, 0.570175469, 0)
+Submit.Size = UDim2.new(0, 65, 0, 13)
+Submit.Font = Enum.Font.GothamBold
+Submit.Text = "Submit"
+Submit.TextColor3 = Color3.fromRGB(255, 255, 255)
+Submit.TextScaled = true
+Submit.TextSize = 16.000
+Submit.TextWrapped = true
+Submit.MouseButton1Click:Connect(function()
+	if KeyHere.Text == "c578ccde906949fb9e4b8c2e886c" then
+		Login.Visible = false
+		wait(0.5)
+		main.Visible = true
+		OpenUI.Visible = true
+	end
+end)
+
+UICorner_20.Parent = Submit
+
+UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_3.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_3.Thickness = 1.2000000476837158
+UIStroke_3.Parent = Submit
+
+UIGradient_7.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(1, 113, 212)), ColorSequenceKeypoint.new(0.51, Color3.fromRGB(0, 98, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 119, 193))}
+UIGradient_7.Parent = UIStroke_3
+
+GetKey.Name = "Get Key"
+GetKey.Parent = Login
+GetKey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GetKey.BackgroundTransparency = 1.000
+GetKey.Position = UDim2.new(0.0376569033, 0, 0.807017624, 0)
+GetKey.Size = UDim2.new(0, 78, 0, 13)
+GetKey.Font = Enum.Font.GothamBold
+GetKey.Text = "Get Key"
+GetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
+GetKey.TextScaled = true
+GetKey.TextSize = 16.000
+GetKey.TextWrapped = true
+GetKey.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {Title = "Copied!", Text = "Link Successfully Copied!", Icon = "", Duration = 4})
+	wait(1)
+	setclipboard("https://link-target.net/604856/dodoz-key-roblox-script")
+end)
+
+crop_free.Name = "crop_free"
+crop_free.Parent = Login
+crop_free.BackgroundTransparency = 1.000
+crop_free.LayoutOrder = 9
+crop_free.Position = UDim2.new(0.0355648547, 0, 0.815789521, 0)
+crop_free.Size = UDim2.new(0, 11, 0, 11)
+crop_free.ZIndex = 2
+crop_free.Image = "rbxassetid://3926305904"
+crop_free.ImageRectOffset = Vector2.new(684, 724)
+crop_free.ImageRectSize = Vector2.new(36, 36)
+
 -- Scripts:
 
-local function DYEOJUB_fake_script() -- DdzHub.Script 
+local function UHVN_fake_script() -- DdzHub.Script 
 	local script = Instance.new('Script', DdzHub)
 
 	local SGui = script.Parent
@@ -661,8 +807,8 @@ local function DYEOJUB_fake_script() -- DdzHub.Script
 		Frame.Visible = not Frame.Visible
 	end)
 end
-coroutine.wrap(DYEOJUB_fake_script)()
-local function TAKXFSE_fake_script() -- OpenUI.Script 
+coroutine.wrap(UHVN_fake_script)()
+local function QXQTYMH_fake_script() -- OpenUI.Script 
 	local script = Instance.new('Script', OpenUI)
 
 	local Hover = script.Parent.HOVER
@@ -675,4 +821,37 @@ local function TAKXFSE_fake_script() -- OpenUI.Script
 		Hover:Stop()
 	end)
 end
-coroutine.wrap(TAKXFSE_fake_script)()
+coroutine.wrap(QXQTYMH_fake_script)()
+local function PNBM_fake_script() -- Login.LocalScript 
+	local script = Instance.new('LocalScript', Login)
+
+	local UIgradient = script.Parent.UIStroke.UIGradient
+	local runService = game:GetService("RunService")
+	
+	runService.RenderStepped:Connect(function()
+		UIgradient.Rotation += 2
+	end)
+end
+coroutine.wrap(PNBM_fake_script)()
+local function TAUZF_fake_script() -- KeyHere.LocalScript 
+	local script = Instance.new('LocalScript', KeyHere)
+
+	local UIgradient = script.Parent.UIStroke.UIGradient
+	local runService = game:GetService("RunService")
+	
+	runService.RenderStepped:Connect(function()
+		UIgradient.Rotation += 2
+	end)
+end
+coroutine.wrap(TAUZF_fake_script)()
+local function EZQZ_fake_script() -- Submit.LocalScript 
+	local script = Instance.new('LocalScript', Submit)
+
+	local UIgradient = script.Parent.UIStroke.UIGradient
+	local runService = game:GetService("RunService")
+	
+	runService.RenderStepped:Connect(function()
+		UIgradient.Rotation += 2
+	end)
+end
+coroutine.wrap(EZQZ_fake_script)()
