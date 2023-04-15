@@ -747,7 +747,7 @@ Submit.TextScaled = true
 Submit.TextSize = 16.000
 Submit.TextWrapped = true
 Submit.MouseButton1Click:Connect(function()
-	if KeyHere.Text == "c578ccde906949fb9e4b8c2e886c" then
+	if KeyHere.Text == "rr43c34444a45tg5" then
 		Login.Visible = false
 		wait(0.5)
 		main.Visible = true
