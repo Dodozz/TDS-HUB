@@ -4,7 +4,7 @@
 <hr>
 <img src="https://i.ibb.co/ZJJgdck/Captura-de-pantalla-2023-08-03-204242.png" alt="Captura-de-pantalla-2023-08-03-204242" border="0">
 
-## SCRIPT:
+
 
 
      loadstring(game:HttpGet("https://raw.githubusercontent.com/Dodozz/TDS-HUB/main/Hub.lua"))()
